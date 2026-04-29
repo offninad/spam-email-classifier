@@ -1,0 +1,21 @@
+text,label
+"Congratulations! You have won a $1000 Walmart gift card. Click here to claim now!",spam
+"URGENT: Your account has been suspended. Verify your password immediately at http://bit.ly/fakebank",spam
+"Free viagra! Limited time offer, click to buy now",spam
+"You are the lucky winner of our weekly lottery. Send your bank details to claim 50000 USD.",spam
+"Make $5000 a week working from home, no experience needed. Click the link!",spam
+"Hot singles in your area want to meet you tonight!",spam
+"Lowest price on prescription drugs, no doctor visit required",spam
+"Your PayPal account is locked. Login here to restore access immediately.",spam
+"WIN A NEW IPHONE 15 PRO!! Reply YES to enter the giveaway",spam
+"Investment opportunity — guaranteed 200% returns in 30 days. Limited slots.",spam
+"Re: lunch tomorrow — does 12:30 still work for you?",ham
+"Hi team, attaching the slides for tomorrow's standup. Let me know if you have feedback.",ham
+"Hey, the build is failing on main, can you take a look when you have a minute?",ham
+"Thanks for sending that paper, I'll read it tonight and get back to you.",ham
+"Project status update: backend integration is on track for next Friday's milestone.",ham
+"Your Amazon order #123-456 has shipped and will arrive on Tuesday.",ham
+"Reminder: Dr. Patel appointment tomorrow at 9 AM. Reply C to confirm.",ham
+"Mom called — please give her a ring back tonight.",ham
+"Pull request review requested: feature/login-redesign",ham
+"The conference room is booked for the 3pm sync. See you there.",ham
