@@ -31,9 +31,9 @@ ENV/
 # Jupyter
 .ipynb_checkpoints
 
-# Project artifacts
-artifacts/
-*.pkl
+# Project artifacts — track the pre-trained model, ignore large extras
+!artifacts/
+!artifacts/best_model.pkl
 *.joblib
 
 # Secrets
