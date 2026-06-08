@@ -44,27 +44,30 @@ spam-email-classifier/
 ## Quickstart
 
 ```bash
-git clone https://github.com/<your-username>/spam-email-classifier.git
+git clone https://github.com/offninad/spam-email-classifier.git
 cd spam-email-classifier
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 python -c "import nltk; nltk.download('stopwords'); nltk.download('punkt'); nltk.download('wordnet')"
 
-# train on the bundled sample data (or your own CSV with columns: text,label)
-python train.py --data data/sample_emails.csv --out artifacts/
-
-# classify a new email
+# a pre-trained model is included — classify straight away:
 python predict.py --model artifacts/best_model.pkl --text "Congratulations! You won a $1000 gift card."
+
+# or retrain on the bundled 1,000-example dataset (or your own CSV: text,label):
+python train.py --data data/sample_emails.csv --out artifacts/
 ```
 
-## Using a Real Dataset
+## Dataset
 
-The bundled `data/sample_emails.csv` is intentionally tiny. For a serious run,
-download a public dataset such as the
+`data/sample_emails.csv` ships with ~1,000 labelled examples (balanced spam/ham)
+covering common patterns: phishing, prize scams, drug ads, financial fraud, and
+realistic ham (work email, calendar reminders, pull requests, etc.). It is large
+enough to train a model that generalises reasonably well out of the box.
+
+For production-scale accuracy, swap in a larger public corpus such as the
 [SMS Spam Collection](https://archive.ics.uci.edu/dataset/228/sms+spam+collection)
-or the [Enron-Spam](https://www2.aueb.gr/users/ion/data/enron-spam/) corpus,
-convert it to a two-column CSV (`text,label` where `label ∈ {spam, ham}`), and
-point `train.py --data` at it.
+or the [Enron-Spam](https://www2.aueb.gr/users/ion/data/enron-spam/) dataset
+(both use the same two-column `text,label` format accepted by `train.py`).
 
 ## OpenAI Fallback
 
