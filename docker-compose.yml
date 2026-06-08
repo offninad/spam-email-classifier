@@ -1,0 +1,19 @@
+services:
+  classifier:
+    build:
+      context: .
+      target: runtime
+    image: spam-email-classifier:latest
+    # Pass your OpenAI key for the LLM fallback layer; omit to use ML-only mode.
+    environment:
+      OPENAI_API_KEY: "${OPENAI_API_KEY:-}"
+    # Mount artifacts read-only so a locally retrained model is picked up without
+    # rebuilding the image.
+    volumes:
+      - ./artifacts:/app/artifacts:ro
+    # Default: classify an obvious spam example; override with `docker compose run`.
+    command:
+      - "--model"
+      - "artifacts/best_model.pkl"
+      - "--text"
+      - "Congratulations! You won a free iPhone. Click here to claim your prize immediately!"
